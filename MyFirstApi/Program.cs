@@ -9,10 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=products.db"));
+    options.UseSqlite("Data Source=app.db"));
 
-    builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source = customers.db"));
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
